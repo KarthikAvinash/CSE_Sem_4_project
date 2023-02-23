@@ -29,10 +29,9 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Column(
           // mainAxisAlignment: MainAxisAlignment.center,
           children: [
-
             SizedBox(
-              height: sHeight*0.03,
-             ),
+              height: sHeight * 0.03,
+            ),
 
             // back icon
             Row(
@@ -45,14 +44,13 @@ class _LoginScreenState extends State<LoginScreen> {
               ],
             ),
 
-             SizedBox(
-              height: sHeight*0.03,
-             ),
+            SizedBox(
+              height: sHeight * 0.03,
+            ),
 
             // Welcome Back text
             Padding(
-              padding: const EdgeInsets.fromLTRB(25
-              , 0, 0, 0),
+              padding: const EdgeInsets.fromLTRB(25, 0, 0, 0),
               child: SizedBox(
                 height: sHeight * 0.2,
                 child: const Text(
@@ -74,6 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: emailController,
                 decoration: const InputDecoration(
                   hintText: "Enter your email",
+                  hintStyle: TextStyle(color: Colors.white),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(width: 3, color: Colors.greenAccent),
                   ),
@@ -94,6 +93,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 controller: passwordController,
                 decoration: const InputDecoration(
                   hintText: "Enter your password",
+                  hintStyle: TextStyle(color: Colors.white),
                   enabledBorder: OutlineInputBorder(
                     borderSide: BorderSide(width: 3, color: Colors.greenAccent),
                   ),
@@ -112,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       onPressed: () => {},
                       child: const Text(
                         "Forgot Password?",
-                        style: TextStyle(color: darkGray),
+                        style: TextStyle(color: darkGray,fontWeight: FontWeight.bold),
                       )),
                 ),
               ],
@@ -121,10 +121,9 @@ class _LoginScreenState extends State<LoginScreen> {
             //Login Button
             Container(
               height: sHeight * 0.1,
-              width: sWidth*0.9,
+              width: sWidth * 0.9,
               decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(8))
-              ),
+                  borderRadius: BorderRadius.all(Radius.circular(8))),
               child: ElevatedButton(
                 onPressed: () {},
                 style: ButtonStyle(
@@ -139,11 +138,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
             //Or login with Sized Box
             Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(
-                  height: sHeight*0.05,
-                  child:const Text("----------- Or login With ----------"),
+                  height: sHeight * 0.05,
+                  child: const Text("----------- Or login With ----------"),
                 ),
               ],
             ),
@@ -151,34 +150,33 @@ class _LoginScreenState extends State<LoginScreen> {
             // Login with google Button
             Container(
               height: sHeight * 0.08,
-              width: sWidth*0.35,
+              width: sWidth * 0.35,
               decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(20))
-              ),
+                  borderRadius: BorderRadius.all(Radius.circular(20))),
               child: ElevatedButton(
                 onPressed: () {},
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                        Colors.white)), // remember to give the color in this format otherwise null safety error will be prompted
-                child:const Icon(Icons.login,color: blackish,),
+                    backgroundColor: MaterialStateProperty.all(Colors
+                        .white)), // remember to give the color in this format otherwise null safety error will be prompted
+                child: const Image(image: AssetImage("images/google_logo.jpg"),
+                height: 35,width: 35,),
               ),
             ),
-    
-          //Dont have an account?Register now
-           Row(
-            mainAxisAlignment:MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.end,
-            children: [
-               Text("Dont have an account?"),
-               TextButton(
-                      onPressed: () => {},
-                      child: const Text(
-                        "Register now?",
-                        style: TextStyle(color: darkGray),
-                      )),
-            ],
-           )
 
+            //Dont have an account?Register now
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text("Dont have an account?"),
+                TextButton(
+                    onPressed: () => {},
+                    child: const Text(
+                      "Register now?",
+                      style: TextStyle(color: darkGray),
+                    )),
+              ],
+            )
           ],
         ),
       )),
